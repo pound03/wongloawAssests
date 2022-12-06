@@ -8,6 +8,8 @@ public class ControlWord : MonoBehaviour
     string[] wordUsed;
     int wordUsedCount;
     ReadText callReadText;
+
+    char lastChar;
     void Start()
     {
         callReadText = GetComponent<ReadText>();
@@ -34,6 +36,8 @@ public class ControlWord : MonoBehaviour
                 wordUsed[wordUsedCount] = word;
                 wordUsedCount++;
                 Debug.Log("word is correct");
+                lastChar = word[word.Length - 1];
+                Debug.Log(lastChar);
             }
             else
             {
